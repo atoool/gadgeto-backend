@@ -10,6 +10,7 @@ var productSchema = new mongoose.Schema({
   img: Array,
   category: String,
   category_id: Number,
+  country: String,
   create_date: {
     type: Date,
     default: Date.now,

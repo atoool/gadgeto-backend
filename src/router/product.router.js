@@ -1,15 +1,16 @@
 // Import product controller
 var productController = require("../controller/product.controller");
+const { authJwt } = require("../middleware");
 
 module.exports = function (router) {
   router
     .route("/products")
     .get(productController.index)
-    .post(productController.new);
+    .post([authJwt.verifyToken, authJwt.isAdmin], productController.new);
   router
     .route("/products/:product_id")
     .get(productController.view)
-    .patch(productController.update)
-    .put(productController.update)
-    .delete(productController.delete);
+    .patch([authJwt.verifyToken, authJwt.isAdmin], productController.update)
+    .put([authJwt.verifyToken, authJwt.isAdmin], productController.update)
+    .delete([authJwt.verifyToken, authJwt.isAdmin], productController.delete);
 };
