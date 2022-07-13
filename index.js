@@ -35,7 +35,7 @@ db.mongoose
     console.log("Successfully connect to MongoDB.");
     roleInitiate();
   })
-  .catch(() => {
+  .catch((err) => {
     console.error("Connection error", err);
     process.exit();
   });
