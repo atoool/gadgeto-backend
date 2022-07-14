@@ -5,7 +5,7 @@ let express = require("express");
 let bodyParser = require("body-parser");
 // Initialise the app
 let app = express();
-// const cors = require("cors");
+const cors = require("cors");
 
 // Import routes
 let apiRoutes = require("./src/router");
@@ -14,10 +14,10 @@ const db = require("./src/model");
 const dbConfig = require("./src/config/db.config");
 const roleInitiate = require("./src/utils/roleInitiate");
 
-// var corsOptions = {
-//   origin: "http://localhost:3000",
-// };
-// app.use(cors(corsOptions));
+var corsOptions = {
+  origin: process.env.CORS_ORIGIN,
+};
+app.use(cors(corsOptions));
 
 // Configure bodyparser to handle post requests
 app.use(
