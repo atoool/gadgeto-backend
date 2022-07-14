@@ -1,6 +1,6 @@
 // Import product controller
-var productController = require("../controller/product.controller");
-const { authJwt } = require("../middleware");
+let productController = require("../controller/product.controller");
+const authJwt = require("../middleware/authJwt");
 
 module.exports = function (router) {
   router

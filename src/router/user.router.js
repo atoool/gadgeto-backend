@@ -1,4 +1,4 @@
-const { authJwt } = require("../middleware");
+const authJwt = require("../middleware/authJwt");
 const {
   allAccess,
   userBoard,
