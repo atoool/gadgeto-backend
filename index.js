@@ -1,3 +1,4 @@
+require("dotenv").config();
 // Import express
 let express = require("express");
 // Import Body parser
@@ -27,7 +28,7 @@ app.use(
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}/${dbConfig.DB}`, {
+  .connect(dbConfig.HOST, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
