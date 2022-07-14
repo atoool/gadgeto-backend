@@ -28,7 +28,7 @@ app.use(
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 db.mongoose
-  .connect(dbConfig.HOST, {
+  .connect(`${dbConfig.HOST}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
