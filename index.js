@@ -14,7 +14,7 @@ const db = require("./src/model");
 const dbConfig = require("./src/config/db.config");
 const roleInitiate = require("./src/utils/roleInitiate");
 
-var corsOptions = {
+const corsOptions = {
   origin: process.env.CORS_ORIGIN || "http://localhost:3000",
 };
 app.use(cors(corsOptions));
