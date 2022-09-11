@@ -1,8 +1,8 @@
 require("dotenv").config();
 // Import express
-let express = require("express");
+const express = require("express");
 // Import Body parser
-let bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 // Initialise the app
 let app = express();
 const cors = require("cors");
