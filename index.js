@@ -4,7 +4,7 @@ const express = require("express");
 // Import Body parser
 const bodyParser = require("body-parser");
 // Initialise the app
-let app = express();
+const app = express();
 const cors = require("cors");
 
 // Import routes
